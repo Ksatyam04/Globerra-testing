@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Dashboard | Logistics Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="user-dashboard.css" />
+</head>
+<body>
+
+ <header class="navbar">
+  <div class="logo">🚚 Logistics Portal</div>
+
+  <nav class="nav-links">
+    <a href="user-dashboard.html" class="active">Dashboard</a>
+    <a href="contracts.html">Contracts</a>
+    <a href="login_page.html" class="logout-btn">Logout</a>
+  </nav>
+
+  <div class="nav-right">
+    <span class="user-role">CLIENT</span>
+  </div>
+</header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- HEADER -->
+    <section class="page-header">
+      <h1>Dashboard</h1>
+      <p>Welcome back! Here's your logistics overview</p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <section class="filters">
+      <div>
+        <label>From Date</label>
+        <input type="date"  />
+      </div>
+      <div>
+        <label>To Date</label>
+        <input type="date"  />
+      </div>
+      <div class="filter-buttons">
+        <button>Last 30 Days</button>
+        <button>Last 7 Days</button>
+        <button class="refresh">🔄 Refresh</button>
+      </div>
+    </section>
+
+    <!-- STAT CARDS -->
+    <section class="stats">
+      <div class="card blue">
+        <h3>Total Shipments</h3>
+        <span>0</span>
+        <p>Click to view all</p>
+      </div>
+
+      <div class="card orange">
+        <h3>In Transit</h3>
+        <span>0</span>
+        <p>Active shipments</p>
+      </div>
+
+      <div class="card green">
+        <h3>Delivered</h3>
+        <span>0</span>
+        <p>Successfully delivered</p>
+      </div>
+
+      <div class="card purple">
+        <h3>Out for Delivery</h3>
+        <span>0</span>
+        <p>Arriving soon</p>
+      </div>
+    </section>
+
+    <!-- INFO GRID -->
+    <section class="info-grid">
+
+      <div class="info-card">
+        <h3>💰 Financial Overview</h3>
+        <div class="finance success">
+          <p>Total Revenue</p>
+          <h2>₹0</h2>
+        </div>
+        <div class="finance warning">
+          <p>Outstanding Amount</p>
+          <h2>₹0</h2>
+          <small>0 unpaid invoices</small>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>📊 Delivery Performance</h3>
+        <div class="performance">
+          <div>
+            <p>On-Time Delivery Rate</p>
+            <strong>0%</strong>
+          </div>
+          <div>
+            <p>Success Rate</p>
+            <strong>0%</strong>
+          </div>
+          <div>
+            <p>Avg. Transit Time</p>
+            <strong>2–3 days</strong>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="actions">
+      <div class="action-card">➕ New Shipment</div>
+      <div class="action-card">📍 Track Shipment</div>
+      <div class="action-card">📄 Invoices</div>
+      <div class="action-card">📈 Reports</div>
+    </section>
+
+  </main>
+
+  <script src="user-dashboard.js"></script>
+</body>
+</html>
