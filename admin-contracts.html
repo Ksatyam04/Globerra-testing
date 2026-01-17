@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin | Create New Contract</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">🚚 Logistics Portal (Admin)</div>
+
+  <nav class="nav-links">
+    <a href="admin-clients.html" >Clients</a>
+    <a href="admin-contracts.html" class="active">Contracts</a>
+    <a href="login_page.html" class="logout-btn">Logout</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="page-header">
+    <h1>Create New Contract</h1>
+    <p>Complete all sections with auto-validation</p>
+  </div>
+
+  <button class="primary-btn" onclick="toggleForm()">➕ Create New Contract</button>
+
+  <div id="contractForm" class="hidden">
+
+    <!-- 1 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        1. Rapidero Party (Fixed)
+      </div>
+      <div class="accordion-body">
+        <input type="text" value="Rapidero Logistics Pvt Ltd" readonly />
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        2. Client Party
+      </div>
+      <div class="accordion-body">
+
+        <label>Select Client *</label>
+        <select>
+          <option>-- Select Client --</option>
+          <option>CLI-0001 - ABC Pvt Ltd</option>
+          <option>CLI-0002 - XYZ Enterprises</option>
+        </select>
+
+        <div class="form-grid">
+          <input type="text" placeholder="Legal Name" />
+          <input type="text" placeholder="Brand Name" />
+          <input type="text" placeholder="PAN" />
+          <input type="text" placeholder="GSTIN" />
+          <input type="text" placeholder="Phone" />
+          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Address" />
+          <input type="text" placeholder="City" />
+          <input type="text" placeholder="State" />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        3. Contract Code (Auto-Generated)
+      </div>
+      <div class="accordion-body">
+        <div class="code-box">
+          <p>Preview Contract Code:</p>
+          <h3>CON-XXXX-MMYY-MMYY-ZZZZ</h3>
+          <small>
+            Format: CON-[ClientCode]-[StartMMYY]-[EndMMYY]-[Sequence]
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        4. Agreement & Term Dates
+      </div>
+      <div class="accordion-body">
+
+        <div class="form-grid">
+          <div>
+            <label>Agreement Date *</label>
+            <input type="date" id="agreementDate"/>
+            <small>Cannot be backdated</small>
+          </div>
+
+          <div>
+            <label>Place of Agreement</label>
+            <input type="text" placeholder="Mumbai, Delhi, etc." />
+          </div>
+
+          <div>
+            <label>Term Start Date *</label>
+            <input type="date" id="termStartDate" />
+          </div>
+
+          <div>
+            <label>Term End Date (Auto +1 year)</label>
+            <input type="date" disabled  id="termEndDate"/>
+          </div>
+
+          <div class="full">
+            <label>Territory</label>
+            <input type="text" value="All India" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<!-- 5. Base Addresses -->
+<div class="accordion">
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+    5. Base Addresses
+  </div>
+
+  <div class="accordion-body">
+
+    <!-- Add Button -->
+    <button class="secondary-btn" onclick="openBaseAddressForm()">
+      + Add Base Address
+    </button>
+
+    <!-- Base Address Form (Hidden Initially) -->
+    <div id="baseAddressForm" class="hidden">
+
+      <div class="form-grid" style="margin-top:15px">
+
+        <div>
+          <label>Warehouse / Office Name *</label>
+          <input type="text" placeholder="Warehouse Name" />
+        </div>
+
+        <div>
+          <label>Contact Person *</label>
+          <input type="text" placeholder="Contact Person" />
+        </div>
+
+        <div>
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="Phone Number" />
+        </div>
+
+        <div>
+          <label>Email *</label>
+          <input type="email" placeholder="Email" />
+        </div>
+
+        <div class="full">
+          <label>Address Line *</label>
+          <input type="text" placeholder="Complete Address" />
+        </div>
+
+        <div>
+          <label>City *</label>
+          <input type="text" />
+        </div>
+
+        <div>
+          <label>Pincode *</label>
+          <input type="text" />
+        </div>
+
+        <div class="full">
+          <label>State *</label>
+          <input type="text" />
+        </div>
+
+      </div>
+
+      <button class="primary-btn" style="margin-top:15px">
+        Save Base Address
+      </button>
+
+    </div>
+  </div>
+</div>
+
+    <!-- 6 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        6. Zone Rates & City Mapping
+      </div>
+      <div class="accordion-body">
+        <div class="empty-state">
+          ⚠ Add base addresses first
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        7. Payment Terms
+      </div>
+      <div class="accordion-body">
+
+        <div class="form-grid">
+          <div>
+            <label>Payment Terms</label>
+            <select>
+              <option>Credit</option>
+              <option>Prepaid</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Settlement Days</label>
+            <input type="number" value="30" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        8. Pickup Charges
+      </div>
+      <div class="accordion-body empty-state">
+        No pickup charges added
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        9. Delivery Charges
+      </div>
+      <div class="accordion-body empty-state">
+        No delivery charges added
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        10. ODA Rates
+      </div>
+      <div class="accordion-body empty-state">
+        No ODA rates added
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        11. Metro Congestion Charges
+      </div>
+      <div class="accordion-body empty-state">
+        No metro congestion charges added
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
