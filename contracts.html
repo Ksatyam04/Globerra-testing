@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Contract & Rates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="contracts.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">🚚 Logistics Portal</div>
+
+  <nav class="nav-links">
+    <a href="user-dashboard.html">Dashboard</a>
+    <a href="contracts.html" class="active">Contracts</a>
+    <a href="login_page.html" class="logout-btn">Logout</a>
+  </nav>
+
+  <div class="nav-right">
+    <span class="user-role">CLIENT</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>My Contract & Rates</h1>
+    <p>View your logistics rates and contract details</p>
+  </div>
+
+  <!-- CONTRACT SUMMARY -->
+  <section class="summary-cards">
+    <div class="summary">
+      <label>Contract Code</label>
+      <strong>CON-CLI-0002-0126-0127-0001</strong>
+    </div>
+    <div class="summary active">
+      <label>Status</label>
+      <strong>ACTIVE</strong>
+    </div>
+    <div class="summary">
+      <label>Payment Terms</label>
+      <strong>CREDIT</strong>
+    </div>
+    <div class="summary">
+      <label>Valid Until</label>
+      <strong>21 Jan 2027</strong>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <section class="tabs">
+    <button class="tab active" onclick="toggleTab('overview')">Overview</button>
+    <button class="tab" onclick="toggleTab('pickup')">Pickup Locations (2)</button>
+    <button class="tab" onclick="toggleTab('zones')">Zones & Rates (1)</button>
+    <button class="tab" onclick="toggleTab('charges')">Charges (3)</button>
+    <button class="tab" onclick="toggleTab('oda')">ODA Charges (0)</button>
+    <button class="tab" onclick="toggleTab('metro')">Metro Charges (0)</button>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="tab-content show" id="overview">
+    <h3>Contract Information</h3>
+
+    <div class="info-grid">
+      <div><label>Contract Type</label><strong>GENERAL</strong></div>
+      <div><label>Agreement Date</label><strong>21 Jan 2026</strong></div>
+      <div><label>Valid From</label><strong>22 Jan 2026</strong></div>
+      <div><label>Valid Until</label><strong>21 Jan 2027</strong></div>
+      <div><label>Settlement Period</label><strong>30 days</strong></div>
+      <div><label>GST Applicable</label><strong>Yes</strong></div>
+    </div>
+
+    <div class="info-note">
+      ✔ Your contract is active and all rates shown below are currently applicable.
+    </div>
+
+    <div class="service-summary">
+      <div class="service">Pickup Locations <span>2</span></div>
+      <div class="service">Zone Rates <span>1</span></div>
+      <div class="service">Active Charges <span>3</span></div>
+      <div class="service">Cities Covered <span>1</span></div>
+    </div>
+  </section>
+  <!-- zones & Rates -->
+  <section class="tab-content" id="zones">
+  <p class="muted">Applicable zone-based rates for this contract</p>
+
+  <table class="rates-table">
+    <thead>
+      <tr>
+        <th>Zone</th>
+        <th>From City</th>
+        <th>To City</th>
+        <th>Rate (₹ / kg)</th>
+        <th>Min Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Z1</td>
+        <td>Mumbai</td>
+        <td>Delhi</td>
+        <td>₹12.00</td>
+        <td>500 g</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+  <!-- PICKUP LOCATIONS -->
+  <section class="tab-content" id="pickup">
+    <p class="muted">These are your registered warehouse/office locations for pickups</p>
+
+    <div class="pickup-card primary">
+      <h4>Mumbai Warehouse <span>PRIMARY</span></h4>
+      <p>ANANTAPUR, ANDHRA PRADESH</p>
+      <p>PIN: 515581</p>
+      <p>Contact: luvish | Phone: 9871295854</p>
+    </div>
+
+    <div class="pickup-card">
+      <h4>Bihar Warehouse Testing</h4>
+      <p>BEGUSARAI, BIHAR</p>
+      <p>PIN: 851113</p>
+      <p>Contact: luvish | Phone: 9999935747</p>
+    </div>
+  </section>
+
+  <!-- CHARGES -->
+  <section class="tab-content" id="charges">
+    <p class="muted">These charges may apply based on shipment conditions</p>
+
+    <div class="charge-card">
+      <h4>Designated Area Charge</h4>
+      <p>DESIGNATED_AREA</p>
+      <strong>₹66.00</strong>
+      <span class="flat">FLAT</span>
+    </div>
+
+    <div class="charge-card">
+      <h4>Designated Area Charge</h4>
+      <p>DESIGNATED_AREA</p>
+      <strong>₹12.00</strong>
+      <span class="flat">FLAT</span>
+    </div>
+
+    <div class="charge-card">
+      <h4>Odd Weight Charge</h4>
+      <p>ODD_WEIGHT</p>
+      <strong>₹25.00</strong>
+      <span class="flat">FLAT</span>
+    </div>
+  </section>
+
+    <!-- Metro Charges Tab -->
+  <section class="tab-content" id="metro">
+  <div class="empty-state">
+    <h3>No Metro Charges</h3>
+    <p>Metro-specific charges are not configured for this contract.</p>
+  </div>
+</section>
+    <!-- ODA Charges Tab -->
+  <section class="tab-content" id="oda">
+  <div class="empty-state">
+    <h3>No ODA Charges</h3>
+    <p>ODA charges are not applicable for this contract.</p>
+  </div>
+</section>
+
+</main>
+
+<script src="contracts.js"></script>
+</body>
+</html>
