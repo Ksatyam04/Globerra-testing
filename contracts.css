@@ -1,0 +1,134 @@
+body {
+  background: #f4f7fb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.navbar {
+  background: #0b0b0b;
+  color: #00c853;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #b9f6ca;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.nav-links .active {
+  background: #00c853;
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.logout-btn {
+  background: #e53935;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 5px;
+}
+
+.container {
+  padding: 25px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.summary {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.summary.active {
+  background: #e8f5e9;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 8px 12px;
+  border: none;
+  background: #e3f2fd;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tab.active {
+  background: #1976d2;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tab-content.show {
+  display: block;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.info-note {
+  background: #e3f2fd;
+  padding: 10px;
+  margin: 15px 0;
+  border-left: 4px solid #1976d2;
+}
+
+.service-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.service {
+  background: #f1f8e9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.pickup-card, .charge-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.primary span {
+  background: #1976d2;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.flat {
+  float: right;
+  background: #eee;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
