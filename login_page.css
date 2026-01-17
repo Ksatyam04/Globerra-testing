@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #000000, #0a3d1c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 360px;
+  background: #0b0b0b;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 120, 0.35);
+  text-align: center;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  background: #00c853;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 28px;
+}
+
+h2 {
+  color: #eafff1;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #9fefc0;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  color: #b6f5d0;
+  font-size: 14px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  background: #111;
+  color: #00e676;
+  border: 1px solid #00c853;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+select option {
+  background: #000;
+  color: #00e676;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #00c853;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00e676;
+}
