@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin | Clients</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">🚚 Logistics Portal (Admin)</div>
+
+  <nav class="nav-links">
+    <a href="admin-clients.html" class="active">Clients</a>
+    <a href="admin-contracts.html">Contracts</a>
+    <a href="login_page.html" class="logout-btn">Logout</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <h1>Add New Client</h1>
+  <p class="sub">Add a new client and optionally create their user account</p>
+
+  <!-- CLIENT INFORMATION -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      📄 Client Information
+    </div>
+
+    <div class="accordion-body">
+      <div class="form-grid">
+        <div>
+          <label>Legal Name *</label>
+          <input type="text" value="ABC Pvt Ltd" />
+        </div>
+
+        <div>
+          <label>Brand Name</label>
+          <input type="text" value="ABC Brand" />
+        </div>
+
+        <div>
+          <label>Client Type *</label>
+          <select>
+            <option>Enterprise</option>
+            <option>SME</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Credit Limit (₹)</label>
+          <input type="number" value="100000" />
+        </div>
+
+        <div>
+          <label>Email *</label>
+          <input type="email" value="client@example.com" />
+        </div>
+
+        <div>
+          <label>Phone</label>
+          <input type="text" value="9876543210" />
+        </div>
+
+        <div>
+          <label>PAN</label>
+          <input type="text" value="ABCDE1234F" />
+        </div>
+
+        <div>
+          <label>GSTIN</label>
+          <input type="text" value="22AAAAA0000A1Z5" />
+        </div>
+
+        <div class="full">
+          <label>Billing Address</label>
+          <textarea placeholder="Enter complete billing address"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USER ACCOUNT -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      👤 User Account (Login Access)
+      <span>
+        <input type="checkbox" checked /> Create User Account
+      </span>
+    </div>
+
+    <div class="accordion-body">
+      <div class="info-box">
+        ℹ Creating a user account allows the client to login and access their shipments,
+        invoices, and contracts.
+      </div>
+
+      <div class="form-grid">
+        <div>
+          <label>Display Name *</label>
+          <input type="text" value="John Doe" />
+        </div>
+
+        <div>
+          <label>Login Username Type *</label>
+          <select>
+            <option>Email</option>
+            <option>Phone</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label>Login Username (Auto-filled)</label>
+          <input type="text" disabled value="Will use client's email" />
+        </div>
+
+        <div>
+          <label>Password *</label>
+          <input type="password" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
